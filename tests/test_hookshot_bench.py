@@ -217,5 +217,14 @@ class Helpers(unittest.TestCase):
             self.assertGreater(mb, 0)
 
 
+class RunFolder(unittest.TestCase):
+    def test_the_default_run_folder_is_ignored_by_git(self):
+        # It holds game screenshots and the full log: CONTRIBUTING.md keeps both out of the repository.
+        src = (ROOT / "scripts" / "hookshot_bench.py").read_text(encoding="utf-8")
+        self.assertIn('os.path.join("bench-runs", ', src)
+        ignored = (ROOT / ".gitignore").read_text(encoding="utf-8").splitlines()
+        self.assertIn("bench-runs/", [line.strip() for line in ignored])
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -440,7 +440,7 @@ The numbers come from the game's own log lines over the window: the medians of `
 `GPU time`, every part of `a frame's replay time (ms)`, and the highest `VRAM: U MB used of A MB allowed`. The bridge's fps
 and the process's memory at the end of the window are added, with the share of the window an event was playing in (the
 game's clock goes on: a dialogue that a time of day brings can land in it). `summary.json` in the run folder
-(`bench-runs/<time>-<name>`) holds them per place, with the build's version and the lines `--grep` asked for. The log,
+(`bench-runs/<time>-<name>`, which git ignores) holds them per place, with the build's version and the lines `--grep` asked for. The log,
 the screenshots and the summary stay in that folder. Compare runs made with the same save, settings and cache state:
 the first visit to a place after a cache change compiles pipelines, so run a route once first, or measure twice.
 
